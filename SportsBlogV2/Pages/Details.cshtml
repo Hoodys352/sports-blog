@@ -1,0 +1,47 @@
+﻿@page
+@model SportsBlogV2.Pages.DetailsModel
+@{
+    ViewData["Title"] = "Cały post";
+}
+<div class="container text-center" style="font-size:20px;">
+    <h1>@Html.DisplayFor(modelItem => Model.Post.Title)</h1>
+    <div class="row">
+        <div class="col-xl-12 mt-3">
+            <img class="card-img-top" src="~/images/@Html.DisplayFor(modelItem => Model.Post.ImageName)" alt="missing @Model.Post.ImageName">
+            <div class="card">
+                <div class="card-body text-justify">
+                    <div class="card-text mt-3">
+                        <p>@Html.DisplayFor(modelItem => Model.Post.Content)</p>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <h2>Komentarze : @Html.DisplayFor(modelItem => Model.Post.Comments.Count)</h2>
+                </div>
+                <div class="mt-3 mb-3">
+                    @foreach (var comment in Model.Post.Comments)
+                    {
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-text mt-1 text-justify">
+                                    <p>@Html.DisplayFor(modelItem => comment.Content)</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <form method="post" asp-route-Postid="@Model.Post.PostId" class="mt-3">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Comment.Content" class="control-label">Treść</label>
+                        <textarea asp-for="Comment.Content" class="form-control" style="height:300px;"></textarea>
+                        <span asp-validation-for="Comment.Content" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Dodaj komentarz" class="btn create-submit-button" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
