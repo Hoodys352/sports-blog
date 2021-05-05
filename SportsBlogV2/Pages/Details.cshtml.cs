@@ -52,5 +52,10 @@ namespace SportsBlogV2.Pages
 
             return RedirectToPage("./Index");
         }
+
+        private Comment AddComment(Comment comment)
+        {
+            return Comment;
+        }
     }
 }

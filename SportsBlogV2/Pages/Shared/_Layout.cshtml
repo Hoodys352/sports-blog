@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SportsBlogV2</title>
+    <title>@ViewData["Title"] - Sports Blog</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -13,13 +13,14 @@
     <header>
         <nav class="navbar navbar-expand-sm box-shadow mb-3">
             <div class="container justify-content-between">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">SportsBlogV2</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Sports Blog</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search"/> 
+                <form class="form-inline" asp-page="/Search">
+                    <input class="form-control mr-2 rounded-0" type="search" placeholder="Search..." />
+                    <button class="btn btn-outline-success my-2 rounded-0" type="submit">Search</button>
                 </form>
             </div>
         </nav>
