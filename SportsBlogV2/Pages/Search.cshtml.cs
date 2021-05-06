@@ -6,10 +6,11 @@ namespace SportsBlogV2.Pages
 {
     public class SearchModel : PageModel
     {
+        [BindProperty(SupportsGet = true)]
         public Input SearchResult { get; set; }
-        public void OnGet(string searchResult)
+        public void OnGet()
         {
-            SearchResult.Search = searchResult;
+
         }
     }
 }

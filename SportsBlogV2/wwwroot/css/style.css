@@ -3,6 +3,10 @@
     font-family: 'Playfair Display', serif;
 }
 
+textarea {
+    width: 300px;
+}
+
 .index-top-button {
     color: white;
     border: 8px solid rgb(209, 161, 3);

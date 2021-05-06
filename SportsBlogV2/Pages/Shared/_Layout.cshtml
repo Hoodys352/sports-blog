@@ -18,6 +18,11 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <form  asp-page="/Search">
+                    <label for="searchInput">Wyszukaj</label>
+                    <input type="search" class="form-control" id="searchInput"/>
+                    <button type="submit" class="btn btn-outline-success">Search post</button>
+                </form>
             </div>
         </nav>
     </header>

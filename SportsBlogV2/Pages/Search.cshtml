@@ -3,3 +3,11 @@
 @{
     ViewData["Title"] = "Search results";
 }
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-8 offset-2">
+            <span>@Html.DisplayFor(modelItem => Model.SearchResult.Search)</span>
+        </div>
+    </div>
+</div>
