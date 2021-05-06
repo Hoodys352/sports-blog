@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,6 +32,7 @@ namespace SportsBlogV2.Pages
         [BindProperty]
         public Post Post { get; set; }
 
+        [Required]
         [BindProperty]
         public IFormFile Image { get; set; }
 

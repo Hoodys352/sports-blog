@@ -6,6 +6,10 @@ namespace SportsBlogV2.Models
     public class Comment
     {
         public int CommentId { get; set; }
+        
+        [Required]
+        [StringLength(4000, MinimumLength = 1)]
+        [Column("Content", TypeName="NVARCHAR(4000)")]
         public string Content { get; set; }
 
         public int PostId { get; set; }

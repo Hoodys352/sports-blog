@@ -45,6 +45,10 @@ header {
 header a {
     color: rgb(209, 161, 3);
 }
+
+    header a:hover {
+        color: #007bff
+    }
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
