@@ -1,10 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SportsBlogV2.Data;
+using SportsBlogV2.Models;
 
 namespace SportsBlogV2
 {
@@ -20,7 +23,16 @@ namespace SportsBlogV2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddRazorPages().AddRazorPagesOptions(
+                options => {
+                    options.Conventions.Add(new PageRouteTransformerConvention(new KebabCaseParameterTransformer()));
+                });
+            services.Configure<RouteOptions>(options =>
+            {
+                options.AppendTrailingSlash = true;
+                options.LowercaseUrls = true;
+                options.LowercaseQueryStrings = true;
+            });
             services.AddDbContext<AppDbContext>(
                 options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
         }

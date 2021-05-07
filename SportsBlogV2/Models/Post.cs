@@ -19,6 +19,7 @@ namespace SportsBlogV2.Models
         public string Content { get; set; }
         public string ShortContent { get; set; }
 
+        [Required]
         [DataType(DataType.DateTime)]
         public DateTime CreatedAt { get; set; }
 
@@ -29,5 +30,13 @@ namespace SportsBlogV2.Models
         } //image is saved on server, only imagename is added to database
 
         public List<Comment> Comments { get; set; } = new List<Comment>();
+
+        public string UrlReminder 
+        {
+            get 
+            {
+                return Title.Replace(" ", "-");
+            }
+        }
     }
 }
