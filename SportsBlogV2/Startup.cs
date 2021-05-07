@@ -23,16 +23,7 @@ namespace SportsBlogV2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages().AddRazorPagesOptions(
-                options => {
-                    options.Conventions.Add(new PageRouteTransformerConvention(new KebabCaseParameterTransformer()));
-                });
-            services.Configure<RouteOptions>(options =>
-            {
-                options.AppendTrailingSlash = true;
-                options.LowercaseUrls = true;
-                options.LowercaseQueryStrings = true;
-            });
+            services.AddRazorPages();
             services.AddDbContext<AppDbContext>(
                 options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
         }

@@ -57,7 +57,6 @@ namespace SportsBlogV2.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ImageName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ShortContent")

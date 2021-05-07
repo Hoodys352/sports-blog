@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -51,11 +48,23 @@ namespace SportsBlogV2.Pages
                 await Image.CopyToAsync(fileStream);
             }
 
-            Post.ShortContent = Post.Content.Substring(0, 200);
+            SetShortContent();
             _context.Posts.Add(Post);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+        }
+
+        private void SetShortContent()
+        {
+            if (Post.Content.Length < 250)
+            {
+                Post.ShortContent = Post.Content;
+            }
+            else
+            {
+                Post.ShortContent = Post.Content.Substring(0, 200);
+            }
         }
     }
 }

@@ -9,34 +9,25 @@ namespace SportsBlogV2.Models
     {
         public int PostId { get; set; }
         
-        [Required]
+        [Required(ErrorMessage = "Tytuł jest wymagany - min. 1 litera ")]
         [StringLength(50, MinimumLength = 1)]
         [Column(TypeName = "NVARCHAR(50)")]
         public string Title { get; set; }
         
-        [Required]
+        [Required(ErrorMessage = "Treść jest wymagana - min. 1 litera")]
         [MinLength(1)]
         public string Content { get; set; }
         public string ShortContent { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Podaj datę")]
         [DataType(DataType.DateTime)]
         public DateTime CreatedAt { get; set; }
 
-        [Required]
         public string ImageName
         {
             get; set;
         } //image is saved on server, only imagename is added to database
 
         public List<Comment> Comments { get; set; } = new List<Comment>();
-
-        public string UrlReminder 
-        {
-            get 
-            {
-                return Title.Replace(" ", "-");
-            }
-        }
     }
 }

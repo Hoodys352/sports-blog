@@ -10,8 +10,8 @@ using SportsBlogV2.Data;
 namespace SportsBlogV2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210506134217_Post model update 3")]
-    partial class Postmodelupdate3
+    [Migration("20210507193647_Add models updates")]
+    partial class Addmodelsupdates
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -59,7 +59,6 @@ namespace SportsBlogV2.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ImageName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ShortContent")
