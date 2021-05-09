@@ -3,10 +3,6 @@
     font-family: 'Playfair Display', serif;
 }
 
-textarea {
-    height: 300px;
-}
-
 .index-top-button {
     color: white;
     border: 8px solid rgb(209, 161, 3);
@@ -80,4 +76,8 @@ footer {
 .card > img {
     width: 1078px;
     height: 175px;
+}
+
+textarea {
+    height: 300px;
 }

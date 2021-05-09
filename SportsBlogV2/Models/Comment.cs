@@ -7,7 +7,7 @@ namespace SportsBlogV2.Models
     {
         public int CommentId { get; set; }
         
-        [Required]
+        [Required(ErrorMessage = "Musisz podać treść komentarza")]
         [StringLength(4000, MinimumLength = 1)]
         [Column("Content", TypeName="NVARCHAR(4000)")]
         public string Content { get; set; }

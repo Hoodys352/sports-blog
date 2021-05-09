@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -37,16 +38,16 @@ namespace SportsBlogV2.Pages
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int Postid)
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
+
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-
-            Comment.PostId = Postid;
-            _context.Comments.Add(Comment);
+            Comment.PostId = (int)id;
+            await _context.Comments.AddAsync(Comment);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -29,19 +29,35 @@
                         </div>
                     }
                 </div>
-                <form method="post" asp-route-Postid="@Model.Post.PostId" class="mt-3">
+                <form method="post" asp-route-id="@Model.Post.PostId" class="mt-3">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="Comment.Content" class="control-label">Treść</label>
-                        <textarea asp-for="Comment.Content" class="form-control"></textarea>
+                        <textarea id="comment-content" asp-for="Comment.Content" class="form-control"></textarea>
                         <span asp-validation-for="Comment.Content" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Dodaj komentarz" class="btn create-submit-button" />
+                        <p id="comment-validation-result" style="color: palevioletred;"></p>
+                        <input onclick="return Validate();" type="submit" value="Dodaj komentarz" class="btn create-submit-button" />
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+
+@section Scripts {
+
+    <script>
+        function Validate() {
+            var x = document.getElementById("comment-content").value;
+            if (x == "") {
+                document.getElementById("comment-validation-result").innerHTML = "Komentarz musi zawierać treść !";
+                return false;
+            }
+        }
+    </script>
+
+}
 

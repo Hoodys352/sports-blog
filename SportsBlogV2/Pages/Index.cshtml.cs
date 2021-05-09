@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SportsBlogV2.Pages
 {
-    public class IndexModel : PageModel, IGetItems
+    public class IndexModel : PageModel
     {
         public readonly AppDbContext _context;
         public IndexModel(AppDbContext context)
@@ -17,15 +17,13 @@ namespace SportsBlogV2.Pages
 
         public IList<Post> Posts { get; set; }
 
-        public async Task<IList<Post>> GetPosts()
-        {
-            Posts = await _context.Posts.ToListAsync();
-            return Posts;
-        }
-
         public async Task OnGetAsync()
         {
             await GetPosts();
+        }
+        public async Task GetPosts()
+        {
+            Posts = await _context.Posts.ToListAsync();
         }
     }
 }
