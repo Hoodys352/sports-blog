@@ -31,6 +31,7 @@
                 <div class="form-group">
                     <label class="control-label">Data</label>
                     <input type="file" asp-for="Image" class="form-control-plaintext" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Dodaj post" class="btn create-submit-button" />

@@ -19,10 +19,6 @@ namespace SportsBlogV2.Pages
 
         public async Task OnGetAsync()
         {
-            await GetPosts();
-        }
-        public async Task GetPosts()
-        {
             Posts = await _context.Posts.ToListAsync();
         }
     }

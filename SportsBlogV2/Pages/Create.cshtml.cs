@@ -29,7 +29,7 @@ namespace SportsBlogV2.Pages
         [BindProperty]
         public Post Post { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Wymagane jest zdjêcie")]
         [BindProperty]
         public IFormFile Image { get; set; }
 
@@ -49,7 +49,7 @@ namespace SportsBlogV2.Pages
             }
 
             SetShortContent();
-            _context.Posts.Add(Post);
+            await _context.Posts.AddAsync(Post);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

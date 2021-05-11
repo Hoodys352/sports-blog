@@ -8,8 +8,8 @@ namespace SportsBlogV2.Models
 {
     public class Input
     {
-        [Required]
-        [MinLength(1)]
+        [Required(ErrorMessage = "Treść zapytania nie może być pusta")]
+        [StringLength(50, MinimumLength = 1)]
         public string Search { get; set; }
     }
 }
