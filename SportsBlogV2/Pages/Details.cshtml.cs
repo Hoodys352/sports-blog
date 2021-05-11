@@ -18,9 +18,9 @@ namespace SportsBlogV2.Pages
         }
 
         [BindProperty]
-        public Comment Comment { get; set; } = new Comment();
-        public Post Post { get; set; } = new Post();
-        public IList<Comment> Comments { get; set; } = new List<Comment>();
+        public Comment Comment { get; set; }
+        public Post Post { get; set; }
+        public IList<Comment> Comments { get; set; }
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -50,7 +50,7 @@ namespace SportsBlogV2.Pages
             await _context.Comments.AddAsync(Comment);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("Details", new { id = id });
         }
     }
 }

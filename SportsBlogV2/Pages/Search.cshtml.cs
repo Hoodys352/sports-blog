@@ -36,13 +36,15 @@ namespace SportsBlogV2.Pages
         {
             if (InputValidationResult(Input))
             {
-                Posts = await _context.Posts.Where(x => x.Title == Input.Search).ToListAsync();
+                Posts = await _context.Posts.Where(p => p.Title == Input.Search).ToListAsync();
                 switch (Posts.Count)
                 {
                     case 0:
                         return Page();
                     case 1:
                         return RedirectToPage("Details", new { id = Posts[0].PostId });
+                    default:
+                        return RedirectToPage("SearchResult", new { title = Input.Search.Trim() }); ;
                 }
             }
             return Page();
