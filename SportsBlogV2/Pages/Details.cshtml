@@ -5,7 +5,7 @@
 }
 <div class="container text-center" style="font-size:20px;">
     <h1>@Html.DisplayFor(modelItem => Model.Post.Title)</h1>
-    <a class="btn btn-danger mt-2" asp-page="Delete" asp-route-id="@Model.Post.PostId" asp>Usuń post</a>
+    <a class="btn btn-danger mt-2" asp-page="Delete" asp-route-id="@Model.Post.PostId">Usuń post</a>
     <div class="row">
         <div class="col-xl-12 mt-3">
             <img class="card-img-top" src="~/images/@Html.DisplayFor(modelItem => Model.Post.ImageName)" alt="missing @Model.Post.ImageName">

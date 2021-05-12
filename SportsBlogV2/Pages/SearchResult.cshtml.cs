@@ -22,8 +22,11 @@ namespace SportsBlogV2.Pages
 
         public async Task OnGet(string? title)
         {
-            Title = Uri.UnescapeDataString(title);
-            Posts = await _context.Posts.Where(p => p.Title == Title).ToListAsync();
+            if(title != null)
+            {
+                Title = Uri.UnescapeDataString(title);
+                Posts = await _context.Posts.Where(p => p.Title == Title).ToListAsync();
+            }
         }
     }
 }

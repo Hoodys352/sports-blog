@@ -10,8 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm box-shadow mb-3">
+        <nav class="navbar sticky-top navbar-expand-sm box-shadow mb-3">
             <div class="container justify-content-between">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Sports Blog</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -21,7 +20,6 @@
                 <a class="btn btn-outline-success rounded-0" asp-page="/Search">Search post</a>
             </div>
         </nav>
-    </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

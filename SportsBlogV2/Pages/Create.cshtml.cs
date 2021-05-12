@@ -15,15 +15,11 @@ namespace SportsBlogV2.Pages
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
 
+
         public CreateModel(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
             _env = env;
-        }
-
-        public IActionResult OnGet()
-        {
-            return Page();
         }
 
         [BindProperty]
@@ -33,6 +29,11 @@ namespace SportsBlogV2.Pages
         [BindProperty]
         public IFormFile Image { get; set; }
 
+
+        public IActionResult OnGet()
+        {
+            return Page();
+        }
 
         public async Task<IActionResult> OnPostAsync()
         {

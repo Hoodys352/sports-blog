@@ -39,10 +39,11 @@
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-header {
+nav {
     background-color: #121212;
 }
-header a {
+
+nav a {
     color: rgb(209, 161, 3);
 }
 
@@ -74,6 +75,7 @@ footer {
 }
 
 .card > img {
-    width: 1078px;
-    height: 175px;
+    height: auto;
+    max-height: 400px;
+    width: auto;
 }

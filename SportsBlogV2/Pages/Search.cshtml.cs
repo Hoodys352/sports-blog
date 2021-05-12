@@ -40,9 +40,7 @@ namespace SportsBlogV2.Pages
                 switch (Posts.Count)
                 {
                     case 0:
-                        return Page();
-                    case 1:
-                        return RedirectToPage("Details", new { id = Posts[0].PostId });
+                        return RedirectToPage("SearchResult", new {  });
                     default:
                         return RedirectToPage("SearchResult", new { title = Input.Search.Trim() }); ;
                 }

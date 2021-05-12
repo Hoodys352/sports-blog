@@ -28,6 +28,9 @@ namespace SportsBlogV2.Models
             get; set;
         } //image is saved on server, only imagename is added to database
 
+        [Required(ErrorMessage = "Wybierz tag")]
+        public ETag ETag { get; set; }
+
         public List<Comment> Comments { get; set; } = new List<Comment>();
     }
 }
