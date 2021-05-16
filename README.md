@@ -2,13 +2,13 @@
 
 ## Sports Blog Web App
 
-Description
+Sports blog website, includes many different sports !
 
 ## Used technologies
 
 * ASP.NET Core 3.1
 * HTML
 * CSS
-* Bootstrap 4
+* Bootstrap 4.6.0
 * MSSQL
 
