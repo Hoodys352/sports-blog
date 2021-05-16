@@ -12,3 +12,7 @@ Sports blog website, includes many different sports !
 * Bootstrap 4.6.0
 * MSSQL
 
+## Things to do
+
+* Editing posts
+* Users authorization and authentication
