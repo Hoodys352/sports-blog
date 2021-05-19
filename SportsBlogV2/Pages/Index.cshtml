@@ -19,9 +19,9 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card mt-3">
-                        <img src="~/images/@Html.DisplayFor(modelItem => item.ImageName)" class="card-img-top img-fluid" alt="missing @item.ImageName">
-                        <!--<div style="background-image: url(https://scontent-waw1-1.xx.fbcdn.net/v/t1.15752-9/117880870_3755429367804524_5502809677360003462_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=ae9488&_nc_ohc=q1FdQcFkgdYAX-yMPSx&_nc_ht=scontent-waw1-1.xx&oh=8bec5748c66be58fa87399c9672e0bc4&oe=60C0B86F); background-position: center; background-size: cover; height: 15rem;">-->
-                        <!--</div>-->
+                        <!--<img src="~/images/@Html.DisplayFor(modelItem => item.ImageName)" class="card-img-top img-fluid" alt="missing @item.ImageName">-->
+                        <div style="background-image: url(images/@Html.DisplayFor(modelItem => item.ImageName)); background-position: center; background-size: cover; height: 15rem;">
+                        </div>
                         <div class="card-body">
                             <a asp-page="./Details" asp-route-id="@item.PostId">
                                 <h2 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h2>

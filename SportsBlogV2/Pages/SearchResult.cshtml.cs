@@ -22,7 +22,7 @@ namespace SportsBlogV2.Pages
         public IList<Post> Posts { get; set; }
         public string Title { get; set; }
 
-        public async Task OnGet(string? title, string? tag)
+        public async Task OnGet(string title, string tag)
         {
             if(title != null)
             {

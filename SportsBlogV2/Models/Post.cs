@@ -31,6 +31,6 @@ namespace SportsBlogV2.Models
         [Required(ErrorMessage = "Wybierz tag")]
         public ETag ETag { get; set; }
 
-        public List<Comment> Comments { get; set; } = new List<Comment>();
+        public ICollection<Comment> Comments { get; set; } = new List<Comment>();
     }
 }

@@ -14,13 +14,12 @@ namespace SportsBlogV2.Pages
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
-
-
         public CreateModel(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
             _env = env;
         }
+
 
         [BindProperty]
         public Post Post { get; set; }
@@ -66,6 +65,7 @@ namespace SportsBlogV2.Pages
             {
                 Post.ShortContent = Post.Content.Substring(0, 200);
             }
+
         }
     }
 }
