@@ -10,8 +10,8 @@ using SportsBlogV2.Data;
 namespace SportsBlogV2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210519194918_IList changed to ICollection")]
-    partial class IListchangedtoICollection
+    [Migration("20210506133723_Post model update 2")]
+    partial class Postmodelupdate2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,10 +29,7 @@ namespace SportsBlogV2.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnName("Content")
-                        .HasColumnType("NVARCHAR(4000)")
-                        .HasMaxLength(4000);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PostId")
                         .HasColumnType("int");
@@ -53,15 +50,14 @@ namespace SportsBlogV2.Migrations
 
                     b.Property<string>("Content")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(4000)")
+                        .HasMaxLength(4000);
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ETag")
-                        .HasColumnType("int");
-
                     b.Property<string>("ImageName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ShortContent")
@@ -69,7 +65,7 @@ namespace SportsBlogV2.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR(50)")
+                        .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
                     b.HasKey("PostId");
