@@ -13,10 +13,12 @@ namespace SportsBlogV2.Migrations
                 {
                     PostId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(nullable: true),
-                    Content = table.Column<string>(nullable: true),
+                    Title = table.Column<string>(type: "NVARCHAR(50)", maxLength: 50, nullable: false),
+                    Content = table.Column<string>(nullable: false),
+                    ShortContent = table.Column<string>(nullable: true),
                     CreatedAt = table.Column<DateTime>(nullable: false),
-                    ImageName = table.Column<string>(nullable: true)
+                    ImageName = table.Column<string>(nullable: true),
+                    ETag = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,8 +31,8 @@ namespace SportsBlogV2.Migrations
                 {
                     CommentId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Content = table.Column<string>(nullable: true),
-                    PostId = table.Column<int>(nullable: true)
+                    Content = table.Column<string>(type: "NVARCHAR(4000)", maxLength: 4000, nullable: false),
+                    PostId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -40,7 +42,7 @@ namespace SportsBlogV2.Migrations
                         column: x => x.PostId,
                         principalTable: "Posts",
                         principalColumn: "PostId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
