@@ -6,6 +6,7 @@
 <div class="container text-center" style="font-size:20px;">
     <h1>@Html.DisplayFor(modelItem => Model.Post.Title)</h1>
     <a class="btn btn-danger mt-2" data-toggle="modal" data-target="#ConfirmModal">Usuń post</a>
+    <a class="btn btn-warning mt-2" asp-page="Edit" asp-route-id="@Model.Post.PostId">Edytuj post</a>
     <div class="modal fade" id="ConfirmModal" tabindex="-1" role="dialog" aria-labelledby="ConfirmModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
