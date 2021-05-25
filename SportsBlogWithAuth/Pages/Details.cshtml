@@ -5,26 +5,8 @@
 }
 <div class="container text-center" style="font-size:20px;">
     <h1>@Html.DisplayFor(modelItem => Model.Post.Title)</h1>
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-        Usuń post
-    </button>
     <a class="btn btn-warning mt-2" asp-page="Edit" asp-route-id="@Model.Post.PostId">Edytuj post</a>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Czy na pewno chcesz usunąć?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-dismiss="modal">Anuluj</button>
-                    <a type="button" class="btn btn-danger" asp-page="Delete" asp-route-id="@Model.Post.PostId">Usuń</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <a class="btn btn-danger mt-2" asp-page="Delete" asp-route-id="@Model.Post.PostId">Usuń post</a>
     <div class="row">
         <div class="col-xl-12 mt-3">
             <img class="card-img-top" src="~/images/@Html.DisplayFor(modelItem => Model.Post.ImageName)" alt="missing @Model.Post.ImageName">
