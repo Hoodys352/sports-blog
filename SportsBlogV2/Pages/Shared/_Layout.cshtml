@@ -30,6 +30,7 @@
             <a class="btn btn-outline-success rounded-0" asp-page="/Search">Search post</a>
         </div>
     </nav>
+    @await Html.PartialAsync("_LoginPartial")
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

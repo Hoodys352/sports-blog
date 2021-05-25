@@ -10,8 +10,8 @@ using SportsBlogV2.Data;
 namespace SportsBlogV2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210524101852_Initial")]
-    partial class Initial
+    [Migration("20210525110317_clean users")]
+    partial class cleanusers
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

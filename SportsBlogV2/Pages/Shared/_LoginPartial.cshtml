@@ -1,0 +1,10 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> _signInManager;
+
+@if(_signInManager.IsSignedIn(User))
+{
+    <h1></h1>
+} else
+{
+    <h1>Nie zalogowany</h1>
+}
