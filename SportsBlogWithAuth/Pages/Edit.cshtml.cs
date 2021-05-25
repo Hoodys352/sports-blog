@@ -11,9 +11,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SportsBlogWithAuth.Models;
 using SportsBlogWithAuth.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SportsBlogWithAuth.Pages
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly AppDbContext _context;

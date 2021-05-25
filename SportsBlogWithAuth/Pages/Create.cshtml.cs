@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SportsBlogWithAuth.Models;
 using SportsBlogWithAuth.Data;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace SportsBlogWithAuth.Pages
 {
@@ -16,12 +17,15 @@ namespace SportsBlogWithAuth.Pages
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
+        private readonly UserManager<IdentityUser> _userManager;
 
 
-        public CreateModel(AppDbContext context, IWebHostEnvironment env)
+        public CreateModel(AppDbContext context, 
+            IWebHostEnvironment env, UserManager<IdentityUser> userManager)
         {
             _context = context;
             _env = env;
+            _userManager = userManager;
         }
 
         [BindProperty]
@@ -51,6 +55,9 @@ namespace SportsBlogWithAuth.Pages
                 await Image.CopyToAsync(fileStream);
             }
 
+            //TODO
+            //var currentUser = await _userManager.GetUserAsync(User);
+            //var UserId = currentUser.Id;
             SetShortContent();
             await _context.Posts.AddAsync(Post);
             await _context.SaveChangesAsync();
