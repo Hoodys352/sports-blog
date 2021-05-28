@@ -11,3 +11,5 @@ Sports blog website, includes many different sports !
 * CSS
 * Bootstrap 4.6.0
 * MSSQL
+* Entity Framework Core
+* Authentication
