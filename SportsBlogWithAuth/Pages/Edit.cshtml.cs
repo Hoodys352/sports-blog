@@ -67,6 +67,14 @@ namespace SportsBlogWithAuth.Pages
                 {
                     await Image.CopyToAsync(fileStream);
                 }
+                if (Post.Content.Length < 250)
+                {
+                    Post.ShortContent = Post.Content;
+                }
+                else
+                {
+                    Post.ShortContent = Post.Content.Substring(0, 200);
+                }
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)

@@ -80,3 +80,12 @@ footer {
     max-height: 400px;
     width: auto;
 }
+.btn-gold {
+    border-color: rgb(209, 161, 3);
+    color: rgb(209, 161, 3);
+}
+    .btn-gold:hover {
+        background-color: rgb(199, 153, 2);
+        border-color: rgb(199, 153, 2);
+        color: black;
+    }
