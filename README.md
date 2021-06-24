@@ -4,6 +4,12 @@
 
 Sports blog website, includes many different sports !
 
+## ONLINE VERSION
+
+https://sportsblogwithauth20210624145441.azurewebsites.net/
+
+You can create account and add,delete or update posts and comments
+
 ## How to install
 
 1. Clone the github code
